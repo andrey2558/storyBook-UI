@@ -10,7 +10,6 @@ describe('Button', () => {
                 icon: `<img src="https://cdn4.buysellads.net/uu/1/3386/1525189943-38523.png" alt="ads via Carbon">`,
             },
         });
-
         const wrapperClasses = wrapper.classes();
         const wrapperImage = wrapper.find('img');
         const imageAttrs = wrapperImage.attributes();

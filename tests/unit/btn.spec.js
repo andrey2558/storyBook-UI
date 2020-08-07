@@ -28,7 +28,7 @@ describe('Button', () => {
     it('click event', () => {
         const Component = {
             components: { Btn },
-            template: '<Btn v-on:click="$emit(\'click\')"></Btn>',
+            template: `<Btn v-on:click="$emit('click')"/>`,
         };
         const onClick = jest.fn();
         const wrapper = mount(Component, {

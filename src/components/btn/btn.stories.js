@@ -12,22 +12,32 @@ storiesOf('Кнопки', module).add('Слоты', () => ({
                 <div>
                     <h1>Обычный и Icon слоты</h1>
                     <Btn onClick={this.action} iconPosition="top">
-                        <h1>Default slot</h1>
-                        <div slot="icon">iconSlot</div>
+                        <h1>button text</h1>
                     </Btn>
                 </div>
 
                 <div>
                     <h1>Кнопка "success"</h1>
-                    <Btn onClick={this.link} type="success" iconPosition="last">
-                        <h1>Default slot</h1>
+                    <Btn onClick={this.action} iconPosition="bottom" type={'success'}>
+                        <h1>button text</h1>
+                        <img
+                            src="https://cdn4.buysellads.net/uu/1/3386/1525189943-38523.png"
+                            alt="ads via Carbon"
+                            slot="icon"
+                            style={'width:50px; height: 50px;'}
+                        />
                     </Btn>
                 </div>
 
                 <div>
                     <h1>Кнопка "danger"</h1>
                     <Btn type="danger" iconPosition="first">
-                        <div slot="icon">iconSlot</div>
+                        <img
+                            src="https://cdn4.buysellads.net/uu/1/3386/1525189943-38523.png"
+                            alt="ads via Carbon"
+                            slot="icon"
+                            style={'width:50px; height: 50px;'}
+                        />
                     </Btn>
                 </div>
             </div>

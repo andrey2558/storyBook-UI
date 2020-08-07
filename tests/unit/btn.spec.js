@@ -2,7 +2,7 @@ import { mount, shallowMount } from '@vue/test-utils';
 import Btn from '@/components/btn/btn.vue';
 
 describe('Button', () => {
-    it('props and slots', () => {
+    it('slots', () => {
         const wrapper = mount(Btn, {
             slots: {
                 default: `button text`,
@@ -37,7 +37,7 @@ describe('Button', () => {
     });
 
     it('empty type  btn', () => {
-        const wrapper = mount(Btn, {});
+        const wrapper = mount(Btn);
 
         expect(wrapper.classes().includes('btn--danger')).toBe(false);
         expect(wrapper.classes().includes('btn--green')).toBe(false);
@@ -123,14 +123,14 @@ describe('Button', () => {
             components: { Btn },
             template: `<btn @dblclick="$emit('dblclick')"/>`,
         };
-        const onClick = jest.fn();
+        const onDblClick = jest.fn();
         const wrapper = mount(Component, {
             listeners: {
-                dblclick: onClick,
+                dblclick: onDblClick,
             },
         });
 
         wrapper.trigger('dblclick');
-        expect(onClick).toHaveBeenCalled();
+        expect(onDblClick).toHaveBeenCalled();
     });
 });

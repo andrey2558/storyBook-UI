@@ -80,10 +80,8 @@
   "lint-staged": {
     "*.{js,jsx,vue}": [
       "vue-cli-service lint",
+      "npm run test:unit -u",
       "git add"
-    ],
-    "test": [
-      "npm run test:unit -u"
     ]
   },
   "prettier": {

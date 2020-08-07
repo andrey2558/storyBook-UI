@@ -31,12 +31,11 @@
         computed: {
             buttonClass() {
                 let className = 'btn';
+                if (this.error) {
+                    className += ' isError ';
+                }
 
                 if (this.$slots.icon) {
-                    if (this.error) {
-                        className += ' isError ';
-                    }
-
                     if (this.type === 'success') {
                         className += ' btn--green ';
                     }

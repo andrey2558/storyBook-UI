@@ -35,30 +35,28 @@
                     className += ' isError ';
                 }
 
-                if (this.$slots.icon) {
-                    if (this.type === 'success') {
-                        className += ' btn--green ';
-                    }
+                if (this.type === 'success') {
+                    className += ' btn--green ';
+                }
 
-                    if (this.type === 'danger') {
-                        className += ' btn--danger ';
-                    }
+                if (this.type === 'danger') {
+                    className += ' btn--danger ';
+                }
 
-                    if (this.iconPosition === 'first') {
-                        className += 'iconPosition-first ';
-                    }
+                if (this.iconPosition === 'first') {
+                    className += ' iconPosition-first ';
+                }
 
-                    if (this.iconPosition === 'last') {
-                        className += ' iconPosition-last ';
-                    }
+                if (this.iconPosition === 'last') {
+                    className += ' iconPosition-last ';
+                }
 
-                    if (this.iconPosition === 'top') {
-                        className += ' iconPosition-top ';
-                    }
+                if (this.iconPosition === 'top') {
+                    className += ' iconPosition-top ';
+                }
 
-                    if (this.iconPosition === 'bottom') {
-                        className += ' iconPosition-bottom ';
-                    }
+                if (this.iconPosition === 'bottom') {
+                    className += ' iconPosition-bottom ';
                 }
 
                 return className;

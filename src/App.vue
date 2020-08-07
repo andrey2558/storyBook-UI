@@ -1,17 +1,22 @@
 <template>
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png" />
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+        <btn @dblclick="test" />
     </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue';
+    import Btn from './components/btn/btn';
 
     export default {
         name: 'App',
         components: {
-            HelloWorld,
+            Btn,
+        },
+        methods: {
+            test() {
+                console.log(123);
+            },
         },
     };
 </script>

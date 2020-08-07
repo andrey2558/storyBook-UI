@@ -65,7 +65,12 @@
 
         render() {
             return (
-                <button class={this.buttonClass} name="btn" onFocus={() => this.$emit('clearError')} onClick={() => this.$emit('click')}>
+                <button
+                    class={this.buttonClass}
+                    name="btn"
+                    onFocus={() => this.$emit('clearError')}
+                    onClick={() => this.$emit('click')}
+                    onDblclick={() => this.$emit('dblclick')}>
                     {this.$slots.default}
 
                     {this.$slots.icon}

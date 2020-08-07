@@ -85,7 +85,6 @@ describe('Button', () => {
 
     it('iconPosition empty  btn', () => {
         const wrapper = mount(Btn);
-
         expect(wrapper.classes().includes('iconPosition-top')).toBe(false);
         expect(wrapper.classes().includes('iconPosition-last')).toBe(true);
         expect(wrapper.classes().includes('iconPosition-first')).toBe(false);
@@ -97,13 +96,16 @@ describe('Button', () => {
             propsData: { iconPosition: 'ASasS' },
         });
 
-        expect(wrapper.isFunctionalComponent === true);
+        expect(wrapper.classes().includes('iconPosition-top')).toBe(false);
+        expect(wrapper.classes().includes('iconPosition-last')).toBe(false);
+        expect(wrapper.classes().includes('iconPosition-first')).toBe(false);
+        expect(wrapper.classes().includes('iconPosition-bottom')).toBe(false);
     });
 
     it('click event', () => {
         const Component = {
             components: { Btn },
-            template: `<Btn v-on:click="$emit('click')"/>`,
+            template: `<btn @click="$emit('click')"/>`,
         };
         const onClick = jest.fn();
         const wrapper = mount(Component, {
@@ -113,6 +115,22 @@ describe('Button', () => {
         });
 
         wrapper.trigger('click');
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    it('dbClick event', () => {
+        const Component = {
+            components: { Btn },
+            template: `<btn @dblclick="$emit('dblclick')"/>`,
+        };
+        const onClick = jest.fn();
+        const wrapper = mount(Component, {
+            listeners: {
+                dblclick: onClick,
+            },
+        });
+
+        wrapper.trigger('dblclick');
         expect(onClick).toHaveBeenCalled();
     });
 });

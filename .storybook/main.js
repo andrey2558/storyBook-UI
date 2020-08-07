@@ -16,6 +16,5 @@ module.exports = {
     // Return the altered config
     return config;
   },
-  stories: ['../stories/**/*.stories.js'],
   addons: ['@storybook/addon-actions', '@storybook/addon-links'],
 };

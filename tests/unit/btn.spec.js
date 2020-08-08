@@ -21,7 +21,7 @@ describe('Button', () => {
 
     it('success  btn', () => {
         const wrapper = mount(Btn, {
-            propsData: { type: 'success', iconPosition: 'first' },
+            propsData: { type: 'success' },
         });
         expect(wrapper.classes().includes('btn--green')).toBe(true);
         expect(wrapper.classes().includes('isError')).toBe(false);
